@@ -39,9 +39,11 @@ class mainScreen extends StatelessWidget {
         ),
         body: Stack(
           children: [
-            Positioned.fill(
-              child: profileScreen(
-                  bodymargen: bodymargen, size: size, texTheme: texTheme),
+            Center(
+              child: Positioned.fill(
+                child: profileScreen(
+                    bodymargen: bodymargen, size: size, texTheme: texTheme),
+              ),
             ),
             Positioned(
               bottom: 0,
