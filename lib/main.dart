@@ -1,11 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:techblog_codyad/View/profile_screen.dart';
-import 'package:techblog_codyad/gen/assets.gen.dart';
 import 'package:techblog_codyad/my_Colors.dart';
 import 'package:techblog_codyad/View/splash_Screen.dart';
+import 'package:techblog_codyad/View/register_intro.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,7 +55,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       // home: splashScreen(),
-      home: splashScreen(),
+      home: RegisterIntro(),
     );
   }
 }

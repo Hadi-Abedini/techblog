@@ -12,36 +12,47 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/blueMic.png
-  AssetGenImage get blueMic => const AssetGenImage('assets/icons/blueMic.png');
+  /// File path: assets/icons/blue_pen.png
+  AssetGenImage get bluePen => const AssetGenImage('assets/icons/blue_pen.png');
 
-  /// File path: assets/icons/bluePen.png
-  AssetGenImage get bluePen => const AssetGenImage('assets/icons/bluePen.png');
+  /// File path: assets/icons/down_cat_arrow.png
+  AssetGenImage get downCatArrow =>
+      const AssetGenImage('assets/icons/down_cat_arrow.png');
 
-  /// File path: assets/icons/icon.png
-  AssetGenImage get icon => const AssetGenImage('assets/icons/icon.png');
+  /// File path: assets/icons/hashtagicon.png
+  AssetGenImage get hashtagicon =>
+      const AssetGenImage('assets/icons/hashtagicon.png');
+
+  /// File path: assets/icons/home.png
+  AssetGenImage get home => const AssetGenImage('assets/icons/home.png');
+
+  /// File path: assets/icons/microphon.png
+  AssetGenImage get microphon =>
+      const AssetGenImage('assets/icons/microphon.png');
 
   /// File path: assets/icons/user.png
   AssetGenImage get user => const AssetGenImage('assets/icons/user.png');
 
-  /// File path: assets/icons/w.png
-  AssetGenImage get w => const AssetGenImage('assets/icons/w.png');
+  /// File path: assets/icons/write.png
+  AssetGenImage get write => const AssetGenImage('assets/icons/write.png');
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/programming.png
-  AssetGenImage get programming =>
-      const AssetGenImage('assets/images/programming.png');
+  /// File path: assets/images/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
-  /// File path: assets/images/techbloglogo.png
-  AssetGenImage get techbloglogo =>
-      const AssetGenImage('assets/images/techbloglogo.png');
+  /// File path: assets/images/poster_test.png
+  AssetGenImage get posterTest =>
+      const AssetGenImage('assets/images/poster_test.png');
 
-  /// File path: assets/images/userProf.png
-  AssetGenImage get userProf =>
-      const AssetGenImage('assets/images/userProf.png');
+  /// File path: assets/images/profileAvatar.png
+  AssetGenImage get profileAvatar =>
+      const AssetGenImage('assets/images/profileAvatar.png');
+
+  /// File path: assets/images/tcbot.png
+  AssetGenImage get tcbot => const AssetGenImage('assets/images/tcbot.png');
 }
 
 class Assets {

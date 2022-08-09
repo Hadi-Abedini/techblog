@@ -18,10 +18,6 @@ class _mainScreenState extends State<mainScreen> {
     var texTheme = Theme.of(context).textTheme;
     var bodymargen = size.width / 12.53;
 
-    List<Widget> techMainScreenPage = [
-      homeScreen(bodymargen: bodymargen, size: size, texTheme: texTheme),
-      profileScreen(bodymargen: bodymargen, size: size, texTheme: texTheme),
-    ];
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -39,7 +35,7 @@ class _mainScreenState extends State<mainScreen> {
                 ),
                 Image(
                   height: size.height / 13.64,
-                  image: AssetImage(Assets.images.techbloglogo.path),
+                  image: AssetImage(Assets.images.logo.path),
                 ),
                 Icon(
                   Icons.search,
@@ -53,7 +49,15 @@ class _mainScreenState extends State<mainScreen> {
         body: Stack(
           children: [
             Positioned.fill(
-              child: techMainScreenPage[selectedPageIndex],
+              child: IndexedStack(
+                index: selectedPageIndex,
+                children: [
+                  homeScreen(
+                      bodymargen: bodymargen, size: size, texTheme: texTheme),
+                  profileScreen(
+                      bodymargen: bodymargen, size: size, texTheme: texTheme),
+                ],
+              ),
             ),
             bottomNavigation(
               size: size,
@@ -120,14 +124,14 @@ class bottomNavigation extends StatelessWidget {
                 IconButton(
                   onPressed: (() => changeScreen(0)),
                   icon: ImageIcon(
-                    AssetImage(Assets.icons.icon.path),
+                    AssetImage(Assets.icons.home.path),
                     color: solidColors.posterTitle,
                   ),
                 ),
                 IconButton(
                   onPressed: () {},
                   icon: ImageIcon(
-                    AssetImage(Assets.icons.w.path),
+                    AssetImage(Assets.icons.write.path),
                     color: solidColors.posterTitle,
                   ),
                 ),

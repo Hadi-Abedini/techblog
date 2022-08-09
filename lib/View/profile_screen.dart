@@ -23,7 +23,7 @@ class profileScreen extends StatelessWidget {
       children: [
         SizedBox(height: size.width / 6.5),
         Image(
-          image: AssetImage(Assets.images.userProf.path),
+          image: AssetImage(Assets.images.profileAvatar.path),
           height: size.width / 3.2,
         ),
         Padding(

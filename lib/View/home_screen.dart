@@ -250,7 +250,7 @@ class homeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 ImageIcon(
-                  AssetImage(Assets.icons.blueMic.path),
+                  AssetImage(Assets.icons.microphon.path),
                   color: solidColors.colorTitles,
                 ),
                 const SizedBox(width: 8),

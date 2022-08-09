@@ -3,7 +3,7 @@ import 'package:techblog_codyad/gen/assets.gen.dart';
 import 'model/dataModels.dart';
 
 Map fakeData = {
-  "imageAsset": Assets.images.programming.path,
+  "imageAsset": Assets.images.posterTest.path,
   "writer": 'ملیکا عزیزی',
   "date": 'یک روز پیش',
   "title": 'دوازده قدم برنامه نویسی یک دوره ی',
