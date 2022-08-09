@@ -1,14 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:techblog_codyad/View/home_screen.dart';
 import 'package:techblog_codyad/View/profile_screen.dart';
 import 'package:techblog_codyad/gen/assets.gen.dart';
 import 'package:techblog_codyad/my_Colors.dart';
 
-class mainScreen extends StatelessWidget {
+class mainScreen extends StatefulWidget {
+  @override
+  State<mainScreen> createState() => _mainScreenState();
+}
+
+class _mainScreenState extends State<mainScreen> {
+  var selectedPageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var texTheme = Theme.of(context).textTheme;
     var bodymargen = size.width / 12.53;
+
+    List<Widget> techMainScreenPage = [
+      homeScreen(bodymargen: bodymargen, size: size, texTheme: texTheme),
+      profileScreen(bodymargen: bodymargen, size: size, texTheme: texTheme),
+    ];
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -39,17 +52,17 @@ class mainScreen extends StatelessWidget {
         ),
         body: Stack(
           children: [
-            Center(
-              child: Positioned.fill(
-                child: profileScreen(
-                    bodymargen: bodymargen, size: size, texTheme: texTheme),
-              ),
+            Positioned.fill(
+              child: techMainScreenPage[selectedPageIndex],
             ),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: bottomNavigation(size: size, bodymargen: bodymargen),
+            bottomNavigation(
+              size: size,
+              bodymargen: bodymargen,
+              changeScreen: (int value) {
+                setState(() {
+                  selectedPageIndex = value;
+                });
+              },
             ),
           ],
         ),
@@ -63,63 +76,70 @@ class bottomNavigation extends StatelessWidget {
     Key? key,
     required this.size,
     required this.bodymargen,
+    required this.changeScreen,
   }) : super(key: key);
 
   final Size size;
   final double bodymargen;
+  final Function(int) changeScreen;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: size.height / 5.5,
-      width: double.infinity,
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: gradiantColors.bottomnNavback,
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        ),
-      ),
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(bodymargen, 44, bodymargen, 44),
-        child: Container(
-          height: size.height / 15,
-          width: double.infinity,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(
-              Radius.circular(30),
-            ),
-            gradient: LinearGradient(
-              colors: gradiantColors.bottomnNav,
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-            ),
+    return Positioned(
+      bottom: 0,
+      left: 0,
+      right: 0,
+      child: Container(
+        height: size.height / 5.5,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: gradiantColors.bottomnNavback,
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: ImageIcon(
-                  AssetImage(Assets.icons.icon.path),
-                  color: solidColors.posterTitle,
-                ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(bodymargen, 44, bodymargen, 44),
+          child: Container(
+            height: size.height / 15,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(30),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: ImageIcon(
-                  AssetImage(Assets.icons.w.path),
-                  color: solidColors.posterTitle,
-                ),
+              gradient: LinearGradient(
+                colors: gradiantColors.bottomnNav,
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
               ),
-              IconButton(
-                onPressed: () {},
-                icon: ImageIcon(
-                  AssetImage(Assets.icons.user.path),
-                  color: solidColors.posterTitle,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                IconButton(
+                  onPressed: (() => changeScreen(0)),
+                  icon: ImageIcon(
+                    AssetImage(Assets.icons.icon.path),
+                    color: solidColors.posterTitle,
+                  ),
                 ),
-              ),
-            ],
+                IconButton(
+                  onPressed: () {},
+                  icon: ImageIcon(
+                    AssetImage(Assets.icons.w.path),
+                    color: solidColors.posterTitle,
+                  ),
+                ),
+                IconButton(
+                  onPressed: (() => changeScreen(1)),
+                  icon: ImageIcon(
+                    AssetImage(Assets.icons.user.path),
+                    color: solidColors.posterTitle,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

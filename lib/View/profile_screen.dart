@@ -84,7 +84,7 @@ class profileScreen extends StatelessWidget {
         ),
         tecDivider(size: size),
         InkWell(
-          splashColor: solidColors.primaryColor,
+          splashColor: Colors.red,
           onTap: () {},
           child: SizedBox(
             height: 45,
