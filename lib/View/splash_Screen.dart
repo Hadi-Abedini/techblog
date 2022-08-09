@@ -4,19 +4,21 @@ import 'package:techblog_codyad/gen/assets.gen.dart';
 import 'package:techblog_codyad/View/main_screen.dart';
 import 'package:techblog_codyad/my_Colors.dart';
 
-class splashScreen extends StatefulWidget {
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
   @override
-  State<splashScreen> createState() => _splashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _splashScreenState extends State<splashScreen> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 4)).then(
+    Future.delayed(const Duration(seconds: 4)).then(
       (value) {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => mainScreen(),
+            builder: (context) => const MainScreen(),
           ),
         );
       },
@@ -35,11 +37,11 @@ class _splashScreenState extends State<splashScreen> {
               image: AssetImage(Assets.images.logo.path),
               height: 64,
             ),
-            SizedBox(
+            const SizedBox(
               height: 16.0,
             ),
-            SpinKitThreeBounce(
-              color: solidColors.primaryColor,
+            const SpinKitThreeBounce(
+              color: SolidColors.primaryColor,
               size: 32.0,
             )
           ],

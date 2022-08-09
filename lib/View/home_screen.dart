@@ -3,8 +3,8 @@ import 'package:techblog_codyad/fake_data.dart';
 import 'package:techblog_codyad/gen/assets.gen.dart';
 import 'package:techblog_codyad/my_Colors.dart';
 
-class homeScreen extends StatelessWidget {
-  const homeScreen({
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({
     Key? key,
     required this.bodymargen,
     required this.size,
@@ -37,7 +37,7 @@ class homeScreen extends StatelessWidget {
                   foregroundDecoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     gradient: const LinearGradient(
-                        colors: gradiantColors.homePosterCover,
+                        colors: GradiantColors.homePosterCover,
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         stops: [0.0, 0.7, 0.95]),
@@ -62,7 +62,7 @@ class homeScreen extends StatelessWidget {
                                 padding: EdgeInsets.only(left: 6),
                                 child: Icon(
                                   Icons.visibility,
-                                  color: solidColors.subText,
+                                  color: SolidColors.subText,
                                   size: 17,
                                 ),
                               ),
@@ -103,7 +103,7 @@ class homeScreen extends StatelessWidget {
                           Radius.circular(18),
                         ),
                         gradient: LinearGradient(
-                            colors: gradiantColors.hashTags,
+                            colors: GradiantColors.hashTags,
                             begin: Alignment.centerRight,
                             end: Alignment.centerLeft),
                       ),
@@ -113,7 +113,7 @@ class homeScreen extends StatelessWidget {
                           children: [
                             const Icon(
                               Icons.tag,
-                              color: solidColors.posterTitle,
+                              color: SolidColors.posterTitle,
                               size: 25,
                             ),
                             Padding(
@@ -139,7 +139,7 @@ class homeScreen extends StatelessWidget {
               children: [
                 ImageIcon(
                   AssetImage(Assets.icons.bluePen.path),
-                  color: solidColors.colorTitles,
+                  color: SolidColors.colorTitles,
                 ),
                 const SizedBox(width: 8),
                 Text(
@@ -185,7 +185,7 @@ class homeScreen extends StatelessWidget {
                                     Radius.circular(18),
                                   ),
                                   gradient: LinearGradient(
-                                    colors: gradiantColors.blogPost,
+                                    colors: GradiantColors.blogPost,
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter,
                                   ),
@@ -213,7 +213,7 @@ class homeScreen extends StatelessWidget {
                                           padding: EdgeInsets.only(right: 6),
                                           child: Icon(
                                             Icons.visibility,
-                                            color: solidColors.subText,
+                                            color: SolidColors.subText,
                                             size: 17,
                                           ),
                                         ),
@@ -251,7 +251,7 @@ class homeScreen extends StatelessWidget {
               children: [
                 ImageIcon(
                   AssetImage(Assets.icons.microphon.path),
-                  color: solidColors.colorTitles,
+                  color: SolidColors.colorTitles,
                 ),
                 const SizedBox(width: 8),
                 Text(
@@ -297,7 +297,7 @@ class homeScreen extends StatelessWidget {
                                     Radius.circular(18),
                                   ),
                                   gradient: LinearGradient(
-                                    colors: gradiantColors.blogPost,
+                                    colors: GradiantColors.blogPost,
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter,
                                   ),
@@ -325,7 +325,7 @@ class homeScreen extends StatelessWidget {
                                           padding: EdgeInsets.only(right: 6),
                                           child: Icon(
                                             Icons.visibility,
-                                            color: solidColors.subText,
+                                            color: SolidColors.subText,
                                             size: 17,
                                           ),
                                         ),

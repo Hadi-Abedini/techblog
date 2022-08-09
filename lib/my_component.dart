@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'my_Colors.dart';
 
-class tecDivider extends StatelessWidget {
-  const tecDivider({
+class TecDivider extends StatelessWidget {
+  const TecDivider({
+    Key? key,
     required this.size,
-  });
+  }) : super(key: key);
 
   final Size size;
 
   @override
   Widget build(BuildContext context) {
     return Divider(
-      color: solidColors.dividerColor,
+      color: SolidColors.dividerColor,
       indent: size.width / 6,
       endIndent: size.width / 6,
       thickness: 1,

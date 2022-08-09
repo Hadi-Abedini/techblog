@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:techblog_codyad/View/home_screen.dart';
 import 'package:techblog_codyad/View/profile_screen.dart';
+import 'package:techblog_codyad/View/register_intro.dart';
 import 'package:techblog_codyad/gen/assets.gen.dart';
 import 'package:techblog_codyad/my_Colors.dart';
 
-class mainScreen extends StatefulWidget {
+class MainScreen extends StatefulWidget {
+  const MainScreen({Key? key}) : super(key: key);
+
   @override
-  State<mainScreen> createState() => _mainScreenState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _mainScreenState extends State<mainScreen> {
+class _MainScreenState extends State<MainScreen> {
   var selectedPageIndex = 0;
 
   @override
@@ -21,7 +24,7 @@ class _mainScreenState extends State<mainScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: solidColors.scaffoldBg,
+          backgroundColor: SolidColors.scaffoldBg,
           elevation: 0,
           title: Padding(
             padding: EdgeInsets.fromLTRB(bodymargen / 2, 0, bodymargen / 2, 0),
@@ -52,14 +55,15 @@ class _mainScreenState extends State<mainScreen> {
               child: IndexedStack(
                 index: selectedPageIndex,
                 children: [
-                  homeScreen(
+                  HomeScreen(
                       bodymargen: bodymargen, size: size, texTheme: texTheme),
-                  profileScreen(
+                  const RegisterIntro(),
+                  ProfileScreen(
                       bodymargen: bodymargen, size: size, texTheme: texTheme),
                 ],
               ),
             ),
-            bottomNavigation(
+            ButtonNavigation(
               size: size,
               bodymargen: bodymargen,
               changeScreen: (int value) {
@@ -75,8 +79,8 @@ class _mainScreenState extends State<mainScreen> {
   }
 }
 
-class bottomNavigation extends StatelessWidget {
-  const bottomNavigation({
+class ButtonNavigation extends StatelessWidget {
+  const ButtonNavigation({
     Key? key,
     required this.size,
     required this.bodymargen,
@@ -98,7 +102,7 @@ class bottomNavigation extends StatelessWidget {
         width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: gradiantColors.bottomnNavback,
+            colors: GradiantColors.bottomnNavback,
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -113,7 +117,7 @@ class bottomNavigation extends StatelessWidget {
                 Radius.circular(30),
               ),
               gradient: LinearGradient(
-                colors: gradiantColors.bottomnNav,
+                colors: GradiantColors.bottomnNav,
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
               ),
@@ -125,21 +129,21 @@ class bottomNavigation extends StatelessWidget {
                   onPressed: (() => changeScreen(0)),
                   icon: ImageIcon(
                     AssetImage(Assets.icons.home.path),
-                    color: solidColors.posterTitle,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: ImageIcon(
-                    AssetImage(Assets.icons.write.path),
-                    color: solidColors.posterTitle,
+                    color: SolidColors.posterTitle,
                   ),
                 ),
                 IconButton(
                   onPressed: (() => changeScreen(1)),
                   icon: ImageIcon(
+                    AssetImage(Assets.icons.write.path),
+                    color: SolidColors.posterTitle,
+                  ),
+                ),
+                IconButton(
+                  onPressed: (() => changeScreen(2)),
+                  icon: ImageIcon(
                     AssetImage(Assets.icons.user.path),
-                    color: solidColors.posterTitle,
+                    color: SolidColors.posterTitle,
                   ),
                 ),
               ],

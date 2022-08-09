@@ -4,8 +4,8 @@ import 'package:techblog_codyad/my_Colors.dart';
 import 'package:techblog_codyad/my_component.dart';
 import 'package:techblog_codyad/my_strings.dart';
 
-class profileScreen extends StatelessWidget {
-  const profileScreen({
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({
     Key? key,
     required this.bodymargen,
     required this.size,
@@ -33,11 +33,11 @@ class profileScreen extends StatelessWidget {
             children: [
               ImageIcon(
                 Image(image: AssetImage(Assets.icons.bluePen.path)).image,
-                color: solidColors.colorTitles,
+                color: SolidColors.colorTitles,
               ),
               const SizedBox(width: 8),
               Text(
-                myStrings.imageProfEdit,
+                MyStrings.imageProfEdit,
                 style: texTheme.headline3,
               ),
             ],
@@ -54,35 +54,35 @@ class profileScreen extends StatelessWidget {
             style: Theme.of(context).textTheme.headline4,
           ),
         ),
-        tecDivider(size: size),
+        TecDivider(size: size),
         InkWell(
-          splashColor: solidColors.primaryColor,
+          splashColor: SolidColors.primaryColor,
           onTap: () {},
           child: SizedBox(
             height: 45,
             child: Center(
               child: Text(
-                myStrings.myFaivoritBlog,
+                MyStrings.myFaivoritBlog,
                 style: texTheme.headline4,
               ),
             ),
           ),
         ),
-        tecDivider(size: size),
+        TecDivider(size: size),
         InkWell(
-          splashColor: solidColors.primaryColor,
+          splashColor: SolidColors.primaryColor,
           onTap: () {},
           child: SizedBox(
             height: 45,
             child: Center(
               child: Text(
-                myStrings.myFaivoritPodCast,
+                MyStrings.myFaivoritPodCast,
                 style: texTheme.headline4,
               ),
             ),
           ),
         ),
-        tecDivider(size: size),
+        TecDivider(size: size),
         InkWell(
           splashColor: Colors.red,
           onTap: () {},
@@ -90,7 +90,7 @@ class profileScreen extends StatelessWidget {
             height: 45,
             child: Center(
               child: Text(
-                myStrings.logOut,
+                MyStrings.logOut,
                 style: texTheme.headline4,
               ),
             ),

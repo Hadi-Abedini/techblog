@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.techblog_codyad">
+    <used-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="techblog_codyad"
         android:name="${applicationName}"

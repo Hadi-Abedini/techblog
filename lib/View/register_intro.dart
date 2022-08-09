@@ -4,11 +4,11 @@ import 'package:techblog_codyad/my_Colors.dart';
 import 'package:techblog_codyad/my_strings.dart';
 
 class RegisterIntro extends StatelessWidget {
+  const RegisterIntro({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     var texTheme = Theme.of(context).textTheme;
-    var bodymargen = size.width / 12.53;
 
     return SafeArea(
       child: Scaffold(
@@ -23,7 +23,7 @@ class RegisterIntro extends StatelessWidget {
               const SizedBox(height: 32),
               RichText(
                 text: TextSpan(
-                  text: myStrings.welcome,
+                  text: MyStrings.welcome,
                   style: texTheme.headline4,
                 ),
                 textAlign: TextAlign.center,
@@ -43,9 +43,9 @@ class RegisterIntro extends StatelessWidget {
                   backgroundColor: MaterialStateProperty.resolveWith(
                     (states) {
                       if (states.contains(MaterialState.pressed)) {
-                        return solidColors.colorTitles;
+                        return SolidColors.colorTitles;
                       }
-                      return solidColors.primaryColor;
+                      return SolidColors.primaryColor;
                     },
                   ),
                 ),

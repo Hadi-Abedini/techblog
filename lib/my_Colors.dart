@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class solidColors {
+class SolidColors {
   static const Color primaryColor = Color.fromARGB(255, 68, 4, 87);
   static const Color posterTitle = Color.fromARGB(255, 255, 255, 255);
   static const Color subTitle = Color.fromARGB(222, 255, 255, 255);
@@ -15,27 +15,27 @@ class solidColors {
   static const Color dividerColor = Color.fromARGB(255, 112, 112, 122);
 }
 
-class gradiantColors {
+class GradiantColors {
   static const List<Color> bottomnNav = [
-    const Color.fromARGB(255, 25, 0, 94),
-    const Color.fromARGB(255, 68, 4, 87),
+    Color.fromARGB(255, 25, 0, 94),
+    Color.fromARGB(255, 68, 4, 87),
   ];
   static const List<Color> bottomnNavback = [
-    const Color.fromARGB(0, 255, 255, 255),
-    const Color.fromARGB(178, 255, 255, 255),
-    const Color.fromARGB(255, 255, 255, 255),
+    Color.fromARGB(0, 255, 255, 255),
+    Color.fromARGB(178, 255, 255, 255),
+    Color.fromARGB(255, 255, 255, 255),
   ];
   static const List<Color> hashTags = [
-    const Color.fromARGB(255, 6, 6, 6),
-    const Color.fromARGB(255, 60, 60, 60),
+    Color.fromARGB(255, 6, 6, 6),
+    Color.fromARGB(255, 60, 60, 60),
   ];
   static const List<Color> blogPost = [
-    const Color.fromARGB(0, 255, 255, 255),
-    const Color.fromARGB(255, 0, 0, 0),
+    Color.fromARGB(0, 255, 255, 255),
+    Color.fromARGB(255, 0, 0, 0),
   ];
   static const List<Color> homePosterCover = [
-    const Color.fromARGB(0, 0, 0, 0),
-    const Color.fromARGB(178, 72, 20, 88),
-    const Color.fromARGB(255, 28, 20, 81),
+    Color.fromARGB(0, 0, 0, 0),
+    Color.fromARGB(178, 72, 20, 88),
+    Color.fromARGB(255, 28, 20, 81),
   ];
 }

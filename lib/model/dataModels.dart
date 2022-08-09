@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 class HashTagModel {
   String? title;
   HashTagModel({required this.title});
