@@ -3,7 +3,7 @@ import 'package:techblog_codyad/View/home_screen.dart';
 import 'package:techblog_codyad/View/profile_screen.dart';
 import 'package:techblog_codyad/View/register_intro.dart';
 import 'package:techblog_codyad/gen/assets.gen.dart';
-import 'package:techblog_codyad/my_Colors.dart';
+import 'package:techblog_codyad/my_colors.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);

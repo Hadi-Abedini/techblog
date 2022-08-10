@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:techblog_codyad/gen/assets.gen.dart';
-import 'package:techblog_codyad/my_Colors.dart';
+import 'package:techblog_codyad/my_colors.dart';
 import 'package:techblog_codyad/my_strings.dart';
 
 class RegisterIntro extends StatelessWidget {

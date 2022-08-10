@@ -1,6 +1,6 @@
 import 'package:techblog_codyad/gen/assets.gen.dart';
 
-import 'model/dataModels.dart';
+import 'model/data_odels.dart';
 
 Map fakeData = {
   "imageAsset": Assets.images.posterTest.path,

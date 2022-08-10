@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:techblog_codyad/gen/assets.gen.dart';
 import 'package:techblog_codyad/View/main_screen.dart';
-import 'package:techblog_codyad/my_Colors.dart';
+import 'package:techblog_codyad/my_colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

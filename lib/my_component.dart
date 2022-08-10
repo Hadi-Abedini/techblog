@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'my_Colors.dart';
+import 'my_colors.dart';
 
 class TecDivider extends StatelessWidget {
   const TecDivider({

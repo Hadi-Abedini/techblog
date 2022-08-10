@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:techblog_codyad/fake_data.dart';
 import 'package:techblog_codyad/gen/assets.gen.dart';
-import 'package:techblog_codyad/my_Colors.dart';
+import 'package:techblog_codyad/my_colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                'بازدید ' + fakeData["view"],
+                                "بازدید ${fakeData["view"]}",
                                 style: texTheme.subtitle1,
                               ),
                             ],
