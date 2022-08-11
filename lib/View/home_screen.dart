@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:techblog_codyad/fake_data.dart';
 import 'package:techblog_codyad/gen/assets.gen.dart';
 import 'package:techblog_codyad/my_colors.dart';
+import 'package:techblog_codyad/my_component.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
     Key? key,
     required this.bodymargen,
     required this.size,
-    required this.texTheme,
+    required this.textTheme,
   }) : super(key: key);
 
   final double bodymargen;
   final Size size;
-  final TextTheme texTheme;
+  final TextTheme textTheme;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Text(
                             fakeData["writer"] + ' - ' + fakeData["date"],
-                            style: texTheme.subtitle1,
+                            style: textTheme.subtitle1,
                           ),
                           Row(
                             children: [
@@ -68,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                               Text(
                                 "بازدید ${fakeData["view"]}",
-                                style: texTheme.subtitle1,
+                                style: textTheme.subtitle1,
                               ),
                             ],
                           ),
@@ -77,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(height: size.height / 60),
                       Text(
                         fakeData["title"] + '...',
-                        style: texTheme.headline1,
+                        style: textTheme.headline1,
                       ),
                     ],
                   ),
@@ -97,36 +98,11 @@ class HomeScreen extends StatelessWidget {
                   return Padding(
                     padding: EdgeInsets.fromLTRB(
                         8, 8, index == 0 ? bodymargen : 8, 8),
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(18),
-                        ),
-                        gradient: LinearGradient(
-                            colors: GradiantColors.hashTags,
-                            begin: Alignment.centerRight,
-                            end: Alignment.centerLeft),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-                        child: Row(
-                          children: [
-                            const Icon(
-                              Icons.tag,
-                              color: SolidColors.posterTitle,
-                              size: 25,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-                              child: Text(
-                                tagList[index].title!,
-                                style: texTheme.headline2,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    child: MainTags(
+                        index: index,
+                        textTheme: textTheme,
+                        tagList: tagList,
+                        gradiantColors: GradiantColors.hashTags),
                   );
                 },
               ),
@@ -144,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(width: 8),
                 Text(
                   'مشاهده داغ ترین نوشته ها ',
-                  style: texTheme.headline3,
+                  style: textTheme.headline3,
                 )
               ],
             ),
@@ -201,13 +177,13 @@ class HomeScreen extends StatelessWidget {
                                   children: [
                                     Text(
                                       blogList[index].writer,
-                                      style: texTheme.subtitle1,
+                                      style: textTheme.subtitle1,
                                     ),
                                     Row(
                                       children: [
                                         Text(
                                           blogList[index].views,
-                                          style: texTheme.subtitle1,
+                                          style: textTheme.subtitle1,
                                         ),
                                         const Padding(
                                           padding: EdgeInsets.only(right: 6),
@@ -231,7 +207,7 @@ class HomeScreen extends StatelessWidget {
                             width: size.width / 2.4,
                             child: Text(
                               blogList[index].title,
-                              style: texTheme.headline4,
+                              style: textTheme.headline4,
                               overflow: TextOverflow.ellipsis,
                               maxLines: 2,
                             ),
@@ -256,7 +232,7 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(width: 8),
                 Text(
                   'مشاهده داغ ترین پادکست ها ',
-                  style: texTheme.headline3,
+                  style: textTheme.headline3,
                 )
               ],
             ),
@@ -313,13 +289,13 @@ class HomeScreen extends StatelessWidget {
                                   children: [
                                     Text(
                                       podcastList[index].writer,
-                                      style: texTheme.subtitle1,
+                                      style: textTheme.subtitle1,
                                     ),
                                     Row(
                                       children: [
                                         Text(
                                           podcastList[index].view,
-                                          style: texTheme.subtitle1,
+                                          style: textTheme.subtitle1,
                                         ),
                                         const Padding(
                                           padding: EdgeInsets.only(right: 6),
@@ -344,7 +320,7 @@ class HomeScreen extends StatelessWidget {
                             children: [
                               Text(
                                 podcastList[index].title,
-                                style: texTheme.headline4,
+                                style: textTheme.headline4,
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 2,
                               ),

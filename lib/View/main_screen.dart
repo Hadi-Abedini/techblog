@@ -18,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    var texTheme = Theme.of(context).textTheme;
+    var textTheme = Theme.of(context).textTheme;
     var bodymargen = size.width / 12.53;
 
     return SafeArea(
@@ -56,10 +56,10 @@ class _MainScreenState extends State<MainScreen> {
                 index: selectedPageIndex,
                 children: [
                   HomeScreen(
-                      bodymargen: bodymargen, size: size, texTheme: texTheme),
+                      bodymargen: bodymargen, size: size, textTheme: textTheme),
                   const RegisterIntro(),
                   ProfileScreen(
-                      bodymargen: bodymargen, size: size, texTheme: texTheme),
+                      bodymargen: bodymargen, size: size, textTheme: textTheme),
                 ],
               ),
             ),

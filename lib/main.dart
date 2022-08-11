@@ -46,10 +46,42 @@ class MyApp extends StatelessWidget {
             fontSize: 15,
             color: SolidColors.textTitles,
           ),
+          headline5: TextStyle(
+            fontWeight: FontWeight.w300,
+            fontSize: 14,
+            color: SolidColors.hintText,
+          ),
           subtitle1: TextStyle(
             fontWeight: FontWeight.w300,
             fontSize: 13,
             color: SolidColors.subTitle,
+          ),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(18),
+            borderSide: const BorderSide(width: 15),
+          ),
+          filled: true,
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            textStyle: MaterialStateProperty.resolveWith(
+              (states) {
+                if (states.contains(MaterialState.pressed)) {
+                  return Theme.of(context).textTheme.headline3;
+                }
+                return Theme.of(context).textTheme.subtitle1;
+              },
+            ),
+            backgroundColor: MaterialStateProperty.resolveWith(
+              (states) {
+                if (states.contains(MaterialState.pressed)) {
+                  return SolidColors.colorTitles;
+                }
+                return SolidColors.primaryColor;
+              },
+            ),
           ),
         ),
       ),

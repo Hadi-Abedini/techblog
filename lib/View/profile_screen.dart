@@ -9,12 +9,12 @@ class ProfileScreen extends StatelessWidget {
     Key? key,
     required this.bodymargen,
     required this.size,
-    required this.texTheme,
+    required this.textTheme,
   }) : super(key: key);
 
   final double bodymargen;
   final Size size;
-  final TextTheme texTheme;
+  final TextTheme textTheme;
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +38,14 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(width: 8),
               Text(
                 MyStrings.imageProfEdit,
-                style: texTheme.headline3,
+                style: textTheme.headline3,
               ),
             ],
           ),
         ),
         Text(
           'هادی زین العابدنی',
-          style: texTheme.headline4,
+          style: textTheme.headline4,
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(0, 8, 0, 32),
@@ -63,7 +63,7 @@ class ProfileScreen extends StatelessWidget {
             child: Center(
               child: Text(
                 MyStrings.myFaivoritBlog,
-                style: texTheme.headline4,
+                style: textTheme.headline4,
               ),
             ),
           ),
@@ -77,7 +77,7 @@ class ProfileScreen extends StatelessWidget {
             child: Center(
               child: Text(
                 MyStrings.myFaivoritPodCast,
-                style: texTheme.headline4,
+                style: textTheme.headline4,
               ),
             ),
           ),
@@ -91,7 +91,7 @@ class ProfileScreen extends StatelessWidget {
             child: Center(
               child: Text(
                 MyStrings.logOut,
-                style: texTheme.headline4,
+                style: textTheme.headline4,
               ),
             ),
           ),

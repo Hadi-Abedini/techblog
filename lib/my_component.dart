@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:techblog_codyad/fake_data.dart';
+import 'package:techblog_codyad/model/data_odels.dart';
 import 'my_colors.dart';
 
 class TecDivider extends StatelessWidget {
@@ -16,6 +18,55 @@ class TecDivider extends StatelessWidget {
       indent: size.width / 6,
       endIndent: size.width / 6,
       thickness: 1,
+    );
+  }
+}
+
+class MainTags extends StatelessWidget {
+  const MainTags({
+    Key? key,
+    required this.index,
+    required this.textTheme,
+    required this.tagList,
+    required this.gradiantColors,
+  }) : super(key: key);
+  final int index;
+  final TextTheme textTheme;
+  final List tagList;
+  final List<Color> gradiantColors;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(
+          Radius.circular(18),
+        ),
+        gradient: LinearGradient(
+          colors: gradiantColors,
+          begin: Alignment.centerRight,
+          end: Alignment.centerLeft,
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+        child: Row(
+          children: [
+            const Icon(
+              Icons.tag,
+              color: SolidColors.posterTitle,
+              size: 25,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+              child: Text(
+                tagList[index].title,
+                style: textTheme.headline2,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
