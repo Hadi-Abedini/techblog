@@ -12,6 +12,8 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
+final GlobalKey<ScaffoldState> _key = GlobalKey();
+
 class _MainScreenState extends State<MainScreen> {
   var selectedPageIndex = 0;
 
@@ -23,7 +25,9 @@ class _MainScreenState extends State<MainScreen> {
 
     return SafeArea(
       child: Scaffold(
+        key: _key,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: SolidColors.scaffoldBg,
           elevation: 0,
           title: Padding(
@@ -31,10 +35,15 @@ class _MainScreenState extends State<MainScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(
-                  Icons.dehaze,
-                  size: size.height / 25,
-                  color: Colors.black,
+                InkWell(
+                  onTap: () {
+                    _key.currentState!.openDrawer();
+                  },
+                  child: Icon(
+                    Icons.dehaze,
+                    size: size.height / 25,
+                    color: Colors.black,
+                  ),
                 ),
                 Image(
                   height: size.height / 13.64,
@@ -44,6 +53,70 @@ class _MainScreenState extends State<MainScreen> {
                   Icons.search,
                   size: size.height / 25,
                   color: Colors.black,
+                ),
+              ],
+            ),
+          ),
+        ),
+        drawer: Drawer(
+          backgroundColor: SolidColors.scaffoldBg,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(32, 0, 32, 0),
+            child: ListView(
+              children: [
+                DrawerHeader(
+                  child: Image.asset(
+                    Assets.images.logo.path,
+                    scale: 2.5,
+                  ),
+                ),
+                Divider(
+                  color: SolidColors.dividerColor.withOpacity(0.2),
+                  thickness: 3,
+                ),
+                ListTile(
+                  title: Text(
+                    "پروفایل کاربری",
+                    style: textTheme.headline4,
+                  ),
+                  onTap: () {},
+                ),
+                Divider(
+                  color: SolidColors.dividerColor.withOpacity(0.2),
+                  thickness: 3,
+                ),
+                ListTile(
+                  title: Text(
+                    "درباره تک‌بلاگ",
+                    style: textTheme.headline4,
+                  ),
+                  onTap: () {},
+                ),
+                Divider(
+                  color: SolidColors.dividerColor.withOpacity(0.2),
+                  thickness: 3,
+                ),
+                ListTile(
+                  title: Text(
+                    "اشتراک گذاری تک بلاگ",
+                    style: textTheme.headline4,
+                  ),
+                  onTap: () {},
+                ),
+                Divider(
+                  color: SolidColors.dividerColor.withOpacity(0.2),
+                  thickness: 3,
+                ),
+                ListTile(
+                  title: Text(
+                    "تک‌بلاگ در گیت هاب",
+                    style: textTheme.headline4,
+                  ),
+                  onTap: () {},
+                ),
+                Divider(
+                  color: SolidColors.dividerColor.withOpacity(0.2),
+                  thickness: 3,
                 ),
               ],
             ),

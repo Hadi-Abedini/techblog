@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:techblog_codyad/fake_data.dart';
 import 'package:techblog_codyad/gen/assets.gen.dart';
+import 'package:techblog_codyad/my_colors.dart';
 import 'package:techblog_codyad/my_component.dart';
 import 'package:techblog_codyad/my_strings.dart';
 
@@ -84,7 +85,28 @@ class _MyCatsState extends State<MyCats> {
                             list: tagList,
                           ),
                           onTap: () {
-                            checkRepetSelectedTag(index);
+                            setState(
+                              () {
+                                if (selectedTagList.contains(tagList[index]) ==
+                                    false) {
+                                  selectedTagList.add(tagList[index]);
+                                } else {
+                                  final snackBar = SnackBar(
+                                    backgroundColor: SolidColors.primaryColor,
+                                    content: SizedBox(
+                                      height: 30,
+                                      child: Text(
+                                        "این دسته بندی رو قبلا انتخاب کردی !!!",
+                                        style: textTheme.headline2,
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  );
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(snackBar);
+                                }
+                              },
+                            );
                           },
                         );
                       },
@@ -129,7 +151,6 @@ class _MyCatsState extends State<MyCats> {
                       },
                     ),
                   ),
-                  const SizedBox(height: 16),
                   ElevatedButton(
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(64, 16, 64, 16),
@@ -138,7 +159,7 @@ class _MyCatsState extends State<MyCats> {
                     onPressed: () {},
                   ),
                   const SizedBox(
-                    height: 25,
+                    height: 2,
                   )
                 ],
               ),
@@ -146,22 +167,6 @@ class _MyCatsState extends State<MyCats> {
           ),
         ),
       ),
-    );
-  }
-
-  void checkRepetSelectedTag(int index) {
-    return setState(
-      () {
-        var repet = false;
-        for (int i = 0; i < selectedTagList.length; i++) {
-          if (tagList[index].title == selectedTagList[i].title) {
-            repet = true;
-          }
-        }
-        if (repet != true) {
-          selectedTagList.add(tagList[index]);
-        }
-      },
     );
   }
 }
