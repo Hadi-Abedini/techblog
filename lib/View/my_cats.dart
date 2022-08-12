@@ -82,10 +82,10 @@ class _MyCatsState extends State<MyCats> {
                       itemBuilder: (context, index) {
                         return InkWell(
                           child: MainTags(
-                              index: index,
-                              textTheme: textTheme,
-                              tagList: tagList,
-                              gradiantColors: GradiantColors.hashTags),
+                            index: index,
+                            textTheme: textTheme,
+                            list: tagList,
+                          ),
                           onTap: () {
                             checkRepetSelectedTag(index);
                           },
@@ -100,7 +100,7 @@ class _MyCatsState extends State<MyCats> {
                   ),
                   const SizedBox(height: 20),
                   SizedBox(
-                    height: 115,
+                    height: 120,
                     child: GridView.builder(
                       physics: const ClampingScrollPhysics(
                         parent: BouncingScrollPhysics(),
@@ -115,11 +115,20 @@ class _MyCatsState extends State<MyCats> {
                         childAspectRatio: 0.3,
                       ),
                       itemBuilder: (context, index) {
-                        return MainTags(
+                        return InkWell(
+                          onTap: () {
+                            setState(
+                              () {
+                                selectedTagList.remove(0);
+                              },
+                            );
+                          },
+                          child: SelectedTag(
                             index: index,
                             textTheme: textTheme,
-                            tagList: selectedTagList,
-                            gradiantColors: GradiantColors.hashTagsSelected);
+                            list: selectedTagList,
+                          ),
+                        );
                       },
                     ),
                   ),

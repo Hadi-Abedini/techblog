@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:techblog_codyad/fake_data.dart';
 import 'package:techblog_codyad/model/data_odels.dart';
@@ -27,23 +28,21 @@ class MainTags extends StatelessWidget {
     Key? key,
     required this.index,
     required this.textTheme,
-    required this.tagList,
-    required this.gradiantColors,
+    required this.list,
   }) : super(key: key);
   final int index;
   final TextTheme textTheme;
-  final List tagList;
-  final List<Color> gradiantColors;
+  final List list;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(
           Radius.circular(18),
         ),
         gradient: LinearGradient(
-          colors: gradiantColors,
+          colors: GradiantColors.hashTags,
           begin: Alignment.centerRight,
           end: Alignment.centerLeft,
         ),
@@ -60,9 +59,53 @@ class MainTags extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
               child: Text(
-                tagList[index].title,
+                list[index].title,
                 style: textTheme.headline2,
               ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class SelectedTag extends StatelessWidget {
+  const SelectedTag({
+    Key? key,
+    required this.index,
+    required this.textTheme,
+    required this.list,
+  }) : super(key: key);
+  final int index;
+  final TextTheme textTheme;
+  final List list;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(
+          Radius.circular(18),
+        ),
+        color: SolidColors.hashTagsSelected,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+              child: Text(
+                list[index].title,
+                style: textTheme.headline4,
+              ),
+            ),
+            Icon(
+              CupertinoIcons.delete,
+              color: Colors.red.shade400,
+              size: 25,
             ),
           ],
         ),

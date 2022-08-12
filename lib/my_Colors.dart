@@ -14,6 +14,7 @@ class SolidColors {
   static const Color subText = Color.fromARGB(255, 197, 197, 197);
   static const Color dividerColor = Color.fromARGB(255, 112, 112, 122);
   static const Color hintText = Color.fromARGB(255, 112, 112, 112);
+  static const Color hashTagsSelected = Color.fromARGB(255, 242, 242, 242);
 }
 
 class GradiantColors {
@@ -30,10 +31,7 @@ class GradiantColors {
     Color.fromARGB(255, 6, 6, 6),
     Color.fromARGB(255, 60, 60, 60),
   ];
-  static const List<Color> hashTagsSelected = [
-    Color.fromARGB(255, 100, 100, 100),
-    Color.fromARGB(255, 100, 100, 100),
-  ];
+
   static const List<Color> blogPost = [
     Color.fromARGB(0, 255, 255, 255),
     Color.fromARGB(255, 0, 0, 0),

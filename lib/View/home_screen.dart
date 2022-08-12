@@ -99,10 +99,10 @@ class HomeScreen extends StatelessWidget {
                     padding: EdgeInsets.fromLTRB(
                         8, 8, index == 0 ? bodymargen : 8, 8),
                     child: MainTags(
-                        index: index,
-                        textTheme: textTheme,
-                        tagList: tagList,
-                        gradiantColors: GradiantColors.hashTags),
+                      index: index,
+                      textTheme: textTheme,
+                      list: tagList,
+                    ),
                   );
                 },
               ),
