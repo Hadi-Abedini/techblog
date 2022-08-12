@@ -1,9 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:techblog_codyad/fake_data.dart';
 import 'package:techblog_codyad/gen/assets.gen.dart';
-import 'package:techblog_codyad/my_colors.dart';
 import 'package:techblog_codyad/my_component.dart';
 import 'package:techblog_codyad/my_strings.dart';
 
@@ -119,7 +116,7 @@ class _MyCatsState extends State<MyCats> {
                           onTap: () {
                             setState(
                               () {
-                                selectedTagList.remove(0);
+                                selectedTagList.removeAt(index);
                               },
                             );
                           },

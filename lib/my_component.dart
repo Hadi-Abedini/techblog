@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:techblog_codyad/fake_data.dart';
-import 'package:techblog_codyad/model/data_odels.dart';
 import 'my_colors.dart';
 
 class TecDivider extends StatelessWidget {

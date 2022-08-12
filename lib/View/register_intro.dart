@@ -93,11 +93,10 @@ class RegisterIntro extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      // ignore: todo
-                      // if (status == true) {// TODO
-                      Navigator.pop(context);
-                      _showActiveCodeBottumSheet(context, size, textTheme);
-                      // }
+                      if (status == true) {
+                        Navigator.pop(context);
+                        _showActiveCodeBottumSheet(context, size, textTheme);
+                      }
                     },
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(64, 16, 64, 16),
